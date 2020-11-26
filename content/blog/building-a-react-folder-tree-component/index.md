@@ -1,17 +1,17 @@
 ---
 title: Building A React Folder Tree Component
 date: 2020-04-29 18:39:00
-author: Anurag Hazra
+author: Krishna Kanth
 tags: ['reactjs', 'javascript']
 ---
 
-Hey folks! I hope you are doing fine in this pandemic situation, Today we will be creating a Folder Tree Component in
-Reactjs from scratch.
+Hey folks! I hope you are doing fine in this pandemic situation, Today we will
+be creating a Folder Tree Component in Reactjs from scratch.
 
 ## Designing the API
 
-Before creating any type of component in reactjs you should 1st design how the API would look like and then write the
-neccessary code to make it work.
+Before creating any type of component in reactjs you should 1st design how the
+API would look like and then write the neccessary code to make it work.
 
 **Our Folder Tree Component will have two APIs**
 
@@ -19,7 +19,8 @@ neccessary code to make it work.
 - Imperative
 
 At first we will tackle the Declarative API which is really simple to create,  
-and in the second section we will do the Imperative API with recursive components.
+and in the second section we will do the Imperative API with recursive
+components.
 
 ### Declarative API
 
@@ -55,30 +56,31 @@ As you can see we will have total of three components to work with
 
 ### Imperative API
 
-Declarative APIs are simple & easier for users to structure the Tree, but in real world scenarios we will have a JSON
-Object representing the Folder Tree and we need to render that with the Imperative API.
+Declarative APIs are simple & easier for users to structure the Tree, but in
+real world scenarios we will have a JSON Object representing the Folder Tree and
+we need to render that with the Imperative API.
 
 ```jsx
 import Tree from './Tree';
 
 const structure = [
   {
-    type: "folder",
-    name: "src",
+    type: 'folder',
+    name: 'src',
     childrens: [
       {
-        type: "folder",
-        name: "Components",
+        type: 'folder',
+        name: 'Components',
         childrens: [
-          { type: "file", name: "Modal.js" },
-          { type: "file", name: "Modal.css" }
-        ]
+          { type: 'file', name: 'Modal.js' },
+          { type: 'file', name: 'Modal.css' },
+        ],
       },
-      { type: "file", name: "index.js" },
-      { type: "file", name: "index.html" }
-    ]
+      { type: 'file', name: 'index.js' },
+      { type: 'file', name: 'index.html' },
+    ],
   },
-  { type: "file", name: "package.json" }
+  { type: 'file', name: 'package.json' },
 ];
 
 const App = () => {
@@ -90,15 +92,17 @@ const App = () => {
 };
 ```
 
-As you can see we have a JSON representation of the same tree we have in our declarative API.  
+As you can see we have a JSON representation of the same tree we have in our
+declarative API.  
 Its an Array of Objects and each object has three properties
 
 - name
 - type (defines if its a Folder or File)
 - childrens (array of nested Files & Folders)
 
-And we just passed this `structure` to our <Tree \/> component which will handle the rendering, we will cover the
-Imperative API later in the post but let us first finish our Declerative API
+And we just passed this `structure` to our <Tree \/> component which will handle
+the rendering, we will cover the Imperative API later in the post but let us
+first finish our Declerative API
 
 ---
 
@@ -110,8 +114,8 @@ Lets first install styled-components for styling our Components.
 npm install styled-components
 ```
 
-Our Tree component will be very simple it will only have some basic styling, it is so simple i don't even have to
-explain it.
+Our Tree component will be very simple it will only have some basic styling, it
+is so simple i don't even have to explain it.
 
 ```jsx
 const StyledTree = styled.div`
@@ -127,7 +131,8 @@ const Tree = ({ children }) => {
 
 In our File component we will also have a File Icon with some basic styling.
 
-Lets install [react-icons](https://www.npmjs.com/package/react-icons) and import our File Icon
+Lets install [react-icons](https://www.npmjs.com/package/react-icons) and import
+our File Icon
 
 ```sh
 npm install react-icons
@@ -155,11 +160,13 @@ const File = ({ name }) => {
 };
 ```
 
-We have a 20px padding left to push the Component to the right a little bit, and display flex properties to align the
-icon & span correctly.
+We have a 20px padding left to push the Component to the right a little bit, and
+display flex properties to align the icon & span correctly.
 
-Thats fine but that generic file icon does not look good, does it? lets change that.  
-We will make a map of extension icons and depending on the file extension we will give the file appropriate icon.
+Thats fine but that generic file icon does not look good, does it? lets change
+that.  
+We will make a map of extension icons and depending on the file extension we
+will give the file appropriate icon.
 
 ```jsx
 import { DiJavascript1, DiCss3Full, DiHtml5, DiReact } from 'react-icons/di';
@@ -173,7 +180,8 @@ const FILE_ICONS = {
 export default FILE_ICONS;
 ```
 
-And in the File component we will extract the extension from the name of the file and use that to render the icon
+And in the File component we will extract the extension from the name of the
+file and use that to render the icon
 
 ```jsx
 import FILE_ICONS from './FileIcons';
@@ -239,11 +247,11 @@ const Folder = ({ name, children }) => {
 };
 ```
 
-And thats it, thats all we need for our Folder component but we also wanted the folders to be collapsible so lets add
-that next.
+And thats it, thats all we need for our Folder component but we also wanted the
+folders to be collapsible so lets add that next.
 
-To add the collapse feature we will add a <Collapse \/> Styled component and also add local state to keep track of
-`isOpen` state of our component.
+To add the collapse feature we will add a <Collapse \/> Styled component and
+also add local state to keep track of `isOpen` state of our component.
 
 ```jsx
 const StyledFolder = styled.div`
@@ -288,8 +296,9 @@ There we go! Our Folder Component is done, Yey!
 
 ### Finalizing Tree Component
 
-As you've noticed in our Declerative API design, we have <Tree.File \/> & <Tree.Folder \/> components we can just assign
-the File & Folder component to our Tree's static methods.
+As you've noticed in our Declerative API design, we have <Tree.File \/> &
+<Tree.Folder \/> components we can just assign the File & Folder component to
+our Tree's static methods.
 
 ```jsx
 const Tree = ({ children }) => {
@@ -322,13 +331,14 @@ const App = () => {
 };
 ```
 
-If we run the code now we will have a working React Folder Tree Component! Congrats 🎉🎉
+If we run the code now we will have a working React Folder Tree Component!
+Congrats 🎉🎉
 
 #### Declerative Demo
 
 https://codesandbox.io/s/react-tree-component-p1-dzrxk
 
--------
+---
 
 ### Imperative API
 
@@ -340,20 +350,26 @@ To create the Imperative API we need recursion!
 > [A Quick Intro to Recursion in Javascript](https://www.freecodecamp.org/news/quick-intro-to-recursion/)  
 > [Intro to Recursion in JS](https://dev.to/ryanfarney3/intro-to-recursion-in-js-32g)
 
-In our <Tree \/> component we accept the `data` props and added an `isImperative` flag.  
-If we have the data prop and not the children that means the user is using the imperative api, and depending on that
-variable we will be rendering the tree.
+In our <Tree \/> component we accept the `data` props and added an
+`isImperative` flag.  
+If we have the data prop and not the children that means the user is using the
+imperative api, and depending on that variable we will be rendering the tree.
 
 ```jsx
 const Tree = ({ data, children }) => {
   const isImperative = data && !children;
 
-  return <StyledTree>{isImperative ? <TreeRecursive data={data} /> : children}</StyledTree>;
+  return (
+    <StyledTree>
+      {isImperative ? <TreeRecursive data={data} /> : children}
+    </StyledTree>
+  );
 };
 ```
 
-As you've noticed we also added a new component called `<TreeRecursive />` which will recursively look through the JSON
-structure and render those nested files/folders, Lets implement it.
+As you've noticed we also added a new component called `<TreeRecursive />` which
+will recursively look through the JSON structure and render those nested
+files/folders, Lets implement it.
 
 ```jsx
 const TreeRecursive = ({ data }) => {
@@ -382,10 +398,11 @@ Believe it or not, we are DONE! 🎉🎉 Run the code and see the magic!
 
 https://codesandbox.io/s/react-tree-component-p2-ngoqe
 
+Phew! That was amazing isn't it? if you made it this far, give yourself a tap on
+the shoulder because you just built a React Folder Tree Component!
 
-Phew! That was amazing isn't it? if you made it this far, give yourself a tap on the shoulder because you just built a React Folder Tree Component!
-
-Now for those who are looking for some more fun try to implement these features on your own :-
+Now for those who are looking for some more fun try to implement these features
+on your own :-
 
 - File/Folder Rename Support
 - File/Folder Creation Support
@@ -394,14 +411,18 @@ Now for those who are looking for some more fun try to implement these features 
 
 #### Foot notes
 
-- Check out my [react-folder-tree](https://github.com/anuraghazra/react-folder-tree) component with full CRUD support.
-- CodeSandbox [Link for Declerative API](https://codesandbox.io/s/react-tree-component-p1-dzrxk) 
-- CodeSandbox [Link for Imperative API](https://codesandbox.io/s/react-tree-component-p2-ngoqe)  
-- [A quick intro to React’s props.children](https://codeburst.io/a-quick-intro-to-reacts-props-children-cb3d2fce4891)  
+- Check out my
+  [react-folder-tree](https://github.com/anuraghazra/react-folder-tree)
+  component with full CRUD support.
+- CodeSandbox
+  [Link for Declerative API](https://codesandbox.io/s/react-tree-component-p1-dzrxk)
+- CodeSandbox
+  [Link for Imperative API](https://codesandbox.io/s/react-tree-component-p2-ngoqe)
+- [A quick intro to React’s props.children](https://codeburst.io/a-quick-intro-to-reacts-props-children-cb3d2fce4891)
 - [A deep dive into children in React](https://mxstbr.blog/2017/02/react-children-deepdive)
-- [A Quick Intro to Recursion in Javascript](https://www.freecodecamp.org/news/quick-intro-to-recursion/)  
+- [A Quick Intro to Recursion in Javascript](https://www.freecodecamp.org/news/quick-intro-to-recursion/)
 - [Intro to Recursion in JS](https://dev.to/ryanfarney3/intro-to-recursion-in-js-32g)
 
 Thanks for reading the post, i hope you learned something and enjoyed it.  
 Stay safe, stay home!  
-Bye have a nice day!  
+Bye have a nice day!

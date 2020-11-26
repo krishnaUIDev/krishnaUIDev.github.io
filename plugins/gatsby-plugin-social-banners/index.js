@@ -37,7 +37,7 @@ module.exports = async ({ markdownNode }) => {
         text: `${dateformat(
           frontmatter.date,
           'mmmm d, yyyy'
-        )}  |  Anurag Hazra`,
+        )}  |  Krishna Kanth`,
         alignmentX: jimp.HORIZONTAL_ALIGN_CENTER,
         alignmentY: jimp.VERTICAL_ALIGN_MIDDLE,
       },

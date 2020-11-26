@@ -3,8 +3,6 @@ title: Verly Range Slider
 excerpt: Verly Range Slider is one of my fun projects which uses my Verly.js physics engine, and it also got mentioned in CodepenSpark. verly range slider got viral on the net and got over 15K views on codepen.io. It uses Verlet physics to simulate those delightful dangly sliders.
 
 iframe: //codepen.io/anuraghazra/embed/agKJEd/?default-tab=result&theme-id=light
-demo: //anuraghazra.github.io/VerlyRangeSlider
-src: //github.com/anuraghazra/VerlyRangeSlider
 
 info:
   idea: The main idea was to make some verlet simulated ropes and connect them to the rang slider's thumb and let them sway
@@ -15,7 +13,7 @@ info:
     - [ Article at DataGenetic | Verlet Simulation , https://datagenetics.com/blog/july22018/index.html]
 ---
 
-While I was building my physics engine [Verly.js](http://anuraghazra.github.io/Verly.js) I was thinking of making something that would showcase the engine's potential to do some exciting stuff, so I created this just as an experiment. 
+While I was building my physics engine I was thinking of making something that would showcase the engine's potential to do some exciting stuff, so I created this just as an experiment. 
 
 
 - so far VerlyRangeSlider got over **18K Views** on [Codepen](https://codepen.io/anuraghazra/pen/agKJEd)
