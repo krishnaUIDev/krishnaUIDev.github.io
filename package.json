@@ -74,7 +74,7 @@
     "preinstall": "cd plugins/gatsby-plugin-social-banners && npm install",
     "now-build": "npm run build",
     "build": "gatsby build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages-deploy -d build",
     "develop": "gatsby develop --host=0.0.0.0",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
