@@ -36,7 +36,7 @@ const BlogPage = () => {
   );
   return (
     <Layout>
-      <SEO title="Blog | Anurag Hazra" />
+      <SEO title="Blog | Krishnakanth" />
 
       <BlogLayout>
         {blogposts.allMarkdownRemark.edges.map(({ node }) => (
