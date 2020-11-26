@@ -69,17 +69,3 @@ Check out the
 
 That's it :D I hope you guys liked the project. And make sure to give it a star
 on [Github](https://github.com/anuraghazra/github-readme-stats)
-
-#### Tweets
-
-First Release :-  
-https://twitter.com/anuraghazru/status/1281178695709814785
-
-Github Extra Pins Release :-  
-https://twitter.com/anuraghazru/status/1281280944641470464
-
-1K Stars Reached :-  
-https://twitter.com/anuraghazru/status/1284034370810966016
-
-10K Stars Reached :-  
-https://twitter.com/anuraghazru/status/1306609825640398853
