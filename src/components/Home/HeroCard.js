@@ -1,6 +1,6 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { withTheme } from 'styled-components';
-
+import { motion } from 'framer-motion';
 import {
   HeroCardWrapper,
   CodeCardWrapper,
@@ -81,7 +81,14 @@ export const ColorPalette = withTheme(({ theme }) => {
 export const HeroCard = () => {
   return (
     <HeroCardWrapper>
-      <CodeCard />
+      <motion.div
+        drag="x"
+        dragConstraints={{ left: -100, right: 100 }}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+      >
+        <CodeCard />
+      </motion.div>
       <ColorPalette />
     </HeroCardWrapper>
   );

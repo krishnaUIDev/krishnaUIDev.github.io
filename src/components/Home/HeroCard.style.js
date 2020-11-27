@@ -55,7 +55,7 @@ export const ColorBoxWrapper = styled.div`
   position: relative;
 
   &:hover {
-    transform: scale(1.1);
+    transform: rotate(360deg) scale(1.1);
     transition: 0.2s;
   }
   &:active {

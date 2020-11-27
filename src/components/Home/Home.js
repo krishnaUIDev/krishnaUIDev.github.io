@@ -1,6 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import svgRect from '@src/static/home_rect.svg';
+import { withTheme } from 'styled-components';
 
 import { HeroCard } from './HeroCard';
 import { HomeWrapper, Intro } from './Home.style';
@@ -8,14 +9,13 @@ import { HomeWrapper, Intro } from './Home.style';
 import IconLink from '@common/IconLink';
 import PageHeader from '@common/PageHeader';
 import Flex from '@common/Flex';
-import Button from '@common/Button';
 
 import { Card, CardIcon, CardText, CardTitle } from '@common/Card';
 
-const ThingsILove = () => (
+const ThingsILove = withTheme(({ theme }) => (
   <Flex justify="space-between" align="center">
     <Card>
-      <CardIcon>
+      <CardIcon style={{ background: theme.gradient2 }}>
         <FontAwesomeIcon icon="code" />
       </CardIcon>
       <CardTitle>FrontEnd</CardTitle>
@@ -47,7 +47,7 @@ const ThingsILove = () => (
       </CardText>
     </Card>
   </Flex>
-);
+));
 
 const Home = () => {
   return (
