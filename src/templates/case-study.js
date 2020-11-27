@@ -109,7 +109,6 @@ export const query = graphql`
         title
         info {
           idea
-          links
           tech
         }
       }
