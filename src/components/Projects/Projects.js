@@ -8,7 +8,7 @@ import IFrame from '@common/IFrame';
 import Button, { IconButton } from '@common/Button';
 
 import SmallProjects from './SmallProjects';
-import JsProjects from './JsProjects';
+
 
 import ProjectTemplate from './ProjectTemplate';
 import { ProjectLinks, ProjectPreview, Tags } from './ProjectTemplate.style';
@@ -85,7 +85,7 @@ const Projects = () => {
       ))}
 
       <SmallProjects />
-      <JsProjects />
+
     </ProjectsWrapper>
   );
 };
